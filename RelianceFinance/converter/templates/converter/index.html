@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Convert Figures to Words</title>
+</head>
+<body>
+    <h1>Convert Figures to Words</h1>
+    <form method="post">
+        {% csrf_token %}
+        <label for="amount">Enter Amount (Re 1 to Rs 999,99,999,99): </label>
+        <input type="text" id="amount" name="amount" required>
+        <button type="submit">Convert</button>
+    </form>
+    {% if words %}
+        <h2>Figures in Words:</h2>
+        <p>{{ words }}</p>
+        <img src="{{ cheque_url }}" alt="Cheque Image">
+    {% endif %}
+</body>
+</html>
